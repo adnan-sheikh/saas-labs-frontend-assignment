@@ -1,3 +1,7 @@
+body {
+  background-color: #f7f7f6;
+}
+
 .table-container {
   padding: 20px;
   max-width: 1200px;
@@ -15,18 +19,25 @@ table {
   border-radius: 4px;
 }
 
+thead th:last-of-type {
+  border-top-right-radius: 4px;
+}
+
+thead th:first-of-type {
+  border-top-left-radius: 4px;
+}
+
 th,
 td {
-  padding: 12px 15px;
+  padding: 16px;
   text-align: left;
   border-bottom: 1px solid #eee;
 }
 
 th {
-  background-color: #f8f9fa;
+  background-color: #03736228;
   font-weight: 600;
   color: #333;
-  text-transform: uppercase;
   font-size: 14px;
 }
 
@@ -34,55 +45,195 @@ tr:hover {
   background-color: #f5f5f5;
 }
 
-.pagination {
+/* Project main column */
+.project-main {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
-  margin-top: 20px;
 }
 
-.pagination-button {
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  background-color: white;
-  color: #333;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: all 0.2s ease;
+.project-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.pagination-button:hover:not(:disabled) {
-  background-color: #f0f0f0;
-  border-color: #ccc;
-}
-
-.pagination-button.active {
-  background-color: #007bff;
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background-color: #037362;
   color: white;
-  border-color: #007bff;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
-.pagination-button:disabled {
-  background-color: #f5f5f5;
-  color: #999;
-  cursor: not-allowed;
+.heart-icon {
+  color: #fff;
+}
+
+.project-type {
+  color: #656969;
+  font-size: 12px;
+}
+
+.project-title-container {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.project-number {
+  color: #656969;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.project-title-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #282828;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.project-title-link:hover {
+  color: #037362;
+  text-decoration: underline;
+}
+
+.project-creator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #656969;
+  font-size: 14px;
+}
+
+/* Project details */
+.project-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #656969;
+  font-size: 14px;
+}
+
+.location-icon {
+  color: #656969;
+}
+
+.location-icon.international {
+  color: #037362;
+}
+
+.time-remaining {
+  color: #656969;
+  font-size: 14px;
+}
+
+.project-ended {
+  color: #d32f2f;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Project stats */
+.project-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pledged-amount {
+  font-size: 18px;
+  font-weight: 500;
+  color: #037362;
+}
+
+.goal-text {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  color: #656969;
+  margin-top: 4px;
+}
+
+.backers-count {
+  font-size: 14px;
+  color: #656969;
+}
+
+.funding-progress-container {
+  position: relative;
+  margin-top: 8px;
+}
+
+.funding-progress {
+  width: 100%;
+  height: 4px;
+  background-color: #e8e8e8;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #037362;
+  transition: width 0.3s ease;
+}
+
+.funding-percentage {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 12px;
+  color: #037362;
+  font-weight: 500;
 }
 
 /* Responsive design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   table {
     font-size: 14px;
   }
 
   th,
   td {
-    padding: 8px 10px;
+    padding: 12px;
   }
 
-  .pagination-button {
-    padding: 6px 10px;
+  .project-title-link {
+    font-size: 14px;
+  }
+
+  .pledged-amount {
+    font-size: 16px;
+  }
+
+  .goal-text,
+  .backers-count,
+  .location-info,
+  .time-remaining,
+  .project-ended {
     font-size: 12px;
+  }
+
+  .project-badge,
+  .project-type {
+    font-size: 11px;
+  }
+
+  .funding-percentage {
+    font-size: 11px;
+    top: -18px;
   }
 }

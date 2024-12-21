@@ -1,14 +1,17 @@
 import "./styles.css";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-interface PaginationProps {
+type PaginationProps = {
   total: number;
   current: number;
   onChange: (page: number) => void;
-}
+};
 
 const Pagination = ({ total, current, onChange }: PaginationProps) => {
   const pageSize = 5;
   const totalPages = Math.ceil(total / pageSize);
+  const startRange = (current - 1) * pageSize + 1;
+  const endRange = Math.min(current * pageSize, total);
 
   return (
     <div
@@ -17,9 +20,8 @@ const Pagination = ({ total, current, onChange }: PaginationProps) => {
       aria-label="Pagination"
     >
       <div className="pagination-info" aria-live="polite">
-        Total {total} items
+        Showing {startRange} - {endRange} of {total} projects
       </div>
-
       <div className="pagination">
         <button
           onClick={() => onChange(current - 1)}
@@ -27,11 +29,12 @@ const Pagination = ({ total, current, onChange }: PaginationProps) => {
           className="pagination-button"
           aria-label="Go to previous page"
         >
+          <ChevronLeft size={18} />
           Previous
         </button>
-        <span className="current-page" aria-current="page">
-          Page {current}
-        </span>
+        <div className="current-page" aria-current="page">
+          Page <span className="page-number">{current}</span> of {totalPages}
+        </div>
         <button
           onClick={() => onChange(current + 1)}
           disabled={current === totalPages}
@@ -39,6 +42,7 @@ const Pagination = ({ total, current, onChange }: PaginationProps) => {
           aria-label="Go to next page"
         >
           Next
+          <ChevronRight size={18} />
         </button>
       </div>
     </div>
