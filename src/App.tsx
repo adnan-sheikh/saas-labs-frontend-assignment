@@ -21,19 +21,21 @@ function App() {
 
   return (
     <div className="table-container">
-      <table>
+      <table role="grid" aria-label="Projects Data">
         <thead>
-          <tr>
+          <tr role="row">
             {requiredColumns.map((col) => (
-              <th key={col}>{parseText(col)}</th>
+              <th key={col} role="columnheader" scope="col">
+                {parseText(col)}
+              </th>
             ))}
           </tr>
         </thead>
         <tbody>
           {currentRecords.map((item) => (
-            <tr key={item["s.no"]}>
+            <tr key={item["s.no"]} role="row">
               {requiredColumns.map((col) => (
-                <td key={col}>
+                <td key={col} role="gridcell">
                   {col === "amt.pledged"
                     ? `$${item[col].toLocaleString()}`
                     : col === "percentage.funded"
