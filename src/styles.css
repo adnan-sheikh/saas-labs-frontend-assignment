@@ -10,6 +10,13 @@ body {
     Ubuntu, Cantarell, sans-serif;
 }
 
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #282828;
+  margin-bottom: 24px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -41,199 +48,45 @@ th {
   font-size: 14px;
 }
 
-tr:hover {
-  background-color: #f5f5f5;
-}
-
-/* Project main column */
-.project-main {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.project-title-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.project-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 8px;
-  background-color: #037362;
-  color: white;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.heart-icon {
-  color: #fff;
-}
-
-.project-type {
-  color: #656969;
-  font-size: 12px;
-}
-
-.project-title-container {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.project-number {
-  color: #656969;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.project-title-link {
-  font-size: 16px;
-  font-weight: 500;
+td {
   color: #282828;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.project-title-link:hover {
-  color: #037362;
-  text-decoration: underline;
-}
-
-.project-creator {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #656969;
   font-size: 14px;
 }
 
-/* Project details */
-.project-details {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+tr:nth-child(even) {
+  background-color: #f8f9fa;
 }
 
-.location-info {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #656969;
-  font-size: 14px;
+tbody tr:hover {
+  background-color: #f5faf9;
 }
 
-.location-icon {
-  color: #656969;
-}
-
-.location-icon.international {
-  color: #037362;
-}
-
-.time-remaining {
-  color: #656969;
-  font-size: 14px;
-}
-
-.project-ended {
-  color: #d32f2f;
-  font-size: 14px;
-  font-style: italic;
-}
-
-/* Project stats */
-.project-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.pledged-amount {
-  font-size: 18px;
+td:first-child {
   font-weight: 500;
-  color: #037362;
 }
 
-.goal-text {
-  display: block;
-  font-size: 14px;
-  font-weight: normal;
-  color: #656969;
-  margin-top: 4px;
-}
-
-.backers-count {
-  font-size: 14px;
-  color: #656969;
-}
-
-.funding-progress-container {
-  position: relative;
-  margin-top: 8px;
-}
-
-.funding-progress {
-  width: 100%;
-  height: 4px;
-  background-color: #e8e8e8;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  height: 100%;
-  background-color: #037362;
-  transition: width 0.3s ease;
-}
-
-.funding-percentage {
-  position: absolute;
-  top: -20px;
-  right: 0;
-  font-size: 12px;
+td:nth-child(2) {
   color: #037362;
   font-weight: 500;
 }
 
-/* Responsive design */
+td:nth-child(3) {
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
-  table {
-    font-size: 14px;
+  .table-container {
+    padding: 16px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
   }
 
   th,
   td {
     padding: 12px;
-  }
-
-  .project-title-link {
-    font-size: 14px;
-  }
-
-  .pledged-amount {
-    font-size: 16px;
-  }
-
-  .goal-text,
-  .backers-count,
-  .location-info,
-  .time-remaining,
-  .project-ended {
-    font-size: 12px;
-  }
-
-  .project-badge,
-  .project-type {
-    font-size: 11px;
-  }
-
-  .funding-percentage {
-    font-size: 11px;
-    top: -18px;
+    font-size: 13px;
   }
 }
